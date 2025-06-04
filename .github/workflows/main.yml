@@ -42,3 +42,5 @@ jobs:
 
       - name: ✅ CI complete
         run: echo "🎉 Build and install for React + Flask successful!"
+      - name: Validate lock file
+        run: npm install --dry-run
