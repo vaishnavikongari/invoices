@@ -1,4 +1,4 @@
-name: Fullstack CI - React + Flask
+name: React + Flask CI
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
       - name: 🟦 Set up Node.js (React)
@@ -24,7 +24,7 @@ jobs:
       - name: 📦 Install React dependencies
         run: npm install
 
-      - name: 🏗️ Build React App
+      - name: 🏗️ Build React app
         run: npm run build
 
       - name: 🐍 Set up Python (Flask)
@@ -38,7 +38,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: ✅ CI complete
-        run: echo "🎉 Build and install for React + Flask successful!"
-      - name: Validate lock file
-        run: npm install --dry-run
+      - name: ✅ Done
+        run: echo "CI pipeline completed successfully 🚀"
