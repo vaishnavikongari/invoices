@@ -20,17 +20,10 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run tests
         run: npm test -- --watchAll=false
 
       - name: Build project
         run: npm run build
-
-      - name: Upload production-ready build
-        uses: actions/upload-artifact@v4
-
-        with:
-          name: build-folder
-          path: build/
